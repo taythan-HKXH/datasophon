@@ -122,6 +122,10 @@ hadoop fs -mkdir /spark-logs
 
 ```
 
+配置spark-env.sh
+在spark-env.sh 中 添加
+export SPARK_DIST_CLASSPATH=$(hadoop classpath)
+
 ### 配置spark3.3.4，将hadoop相关的xml文件拷贝到spark-3.3.4的conf目录下
 
 ```shell 不想拷贝文件的话可以直接通过创建软链接的方式
@@ -138,4 +142,6 @@ ln -s /opt/datasophon/hadoop-3.3.3/etc/hadoop/hdfs-site.xml hdfs-site.xml
 hadoop fs -chmod -R 777 /spark-logs
 hadoop fs -chmod -R 777 /spark-jars
 ```
+
+
 
